@@ -14,10 +14,10 @@
 
 int main() {
   struct list* list = list_setup();
-  struct link* curr = list->head;  /* This line generates a compiler error. */
+  //struct link* curr = list->head;  /* This line generates a compiler error. */
   int i = 0;
 
-  while (curr != NULL) {
+  while (list->head != NULL) {
     /*
      * The next two lines each generate a compiler error.
      */
