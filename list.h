@@ -10,5 +10,6 @@
 struct list;
 
 struct list* list_setup();
+int* list_get_values(struct list* list);
 
 #endif

@@ -15,16 +15,23 @@
 int main() {
   struct list* list = list_setup();
   //struct link* curr = list->head;  /* This line generates a compiler error. */
-  int i = 0;
+  // int i = 0;
 
-  while (list->head != NULL) {
-    /*
-     * The next two lines each generate a compiler error.
-     */
-    printf("== list[%2d]: %d\n", i, curr->val);
-    curr = curr->next;
-    i++;
+  // while (list->head != NULL) {
+  //   /*
+  //    * The next two lines each generate a compiler error.
+  //    */
+  //   printf("== list[%2d]: %d\n", i, curr->val);
+  //   curr = curr->next;
+  //   i++;
+  // }
+
+  int values_of_list[10] = list_get_values(list);
+  for (size_t i = 0; i < sizeof(values_of_list); i++)
+  {
+    printf("The %d element of the linked list is %d", i,values_of_list[i]);
   }
+  
 
   return 0;
 }
