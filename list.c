@@ -49,23 +49,18 @@ struct list* list_setup() {
     next = link;
   }
   list->head = next;
-  return list;
+  if (list == NULL || list->head == NULL) {
+    return NULL;
+  }
+  int* values = malloc(sizeof(int) * 10); // Assuming a maximum of 10 elements
+  struct link* curr = list->head;
+  int i = 0;
+
+  while (curr != NULL) {
+    values[i] = curr->val;
+    curr = curr->next;
+    i++;
+  }
+  return values;
 }
 
-int* list_get_values(struct list* list) {
-    if (list == NULL || list->head == NULL) {
-        return NULL;
-    }
-
-    int* values = malloc(sizeof(int) * 10); // Assuming a maximum of 10 elements
-    struct link* curr = list->head;
-    int i = 0;
-
-    while (curr != NULL) {
-        values[i] = curr->val;
-        curr = curr->next;
-        i++;
-    }
-
-    return values;
-}

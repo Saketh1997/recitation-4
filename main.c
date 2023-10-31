@@ -13,7 +13,6 @@
 #include "list.h"
 
 int main() {
-  struct list* list = list_setup();
   //struct link* curr = list->head;  /* This line generates a compiler error. */
   // int i = 0;
 
@@ -26,12 +25,10 @@ int main() {
   //   i++;
   // }
 
-  int values_of_list[10] = list_get_values(list);
+  int values_of_list[10] = list_get_values(struct list* new_list = list_setup());
   for (size_t i = 0; i < sizeof(values_of_list); i++)
   {
     printf("The %d element of the linked list is %d", i,values_of_list[i]);
   }
-  
-
   return 0;
 }
